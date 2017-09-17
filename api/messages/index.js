@@ -26,4 +26,14 @@ router.get('/messages/latest', (req, res) => {
   });
 });
 
+router.get('/messages/by-topic/:topic_id', (req, res) => {
+  Messages.findById(parseInt(req.params.topic_id))
+  .then((message) => {
+    res.json(message);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+});
+
 module.exports = router;

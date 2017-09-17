@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 const express = require('express');
-const app = express();
+// const app = express();
 const router = express.Router();
 const db = require('../../models');
 const Users = db.Users;

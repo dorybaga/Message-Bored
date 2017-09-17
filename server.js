@@ -1,9 +1,10 @@
 /*jshint esversion: 6 */
-
+const path = require('path');
 const express = require('express');
 const app = express();
 const bp = require('body-parser');
 const db = require('./models');
+
 const usersAPI = require('./api/users/');
 const topicsAPI = require('./api/topics');
 const messagesAPI = require('./api/messages');

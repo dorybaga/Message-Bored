@@ -2,9 +2,9 @@
 angular.module('app')
   .controller('messagesController',
     ['$scope', 'MessagesService',
-    function($scope, messagesService){
+    function($scope, MessagesService){
       $scope.messages = [];
-      messagesService.getMessages()
+      MessagesService.getMessages()
       .then(function(messages) {
         $scope.messages = messages;
       });

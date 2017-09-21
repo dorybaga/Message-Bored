@@ -12,6 +12,10 @@ angular.module('app')
         templateUrl: './messages/messages.html',
         controller: 'messagesController'
       })
+      .when('/login', {
+        templateUrl: './login/login.html',
+        controller: 'loginController'
+      })
       .otherwise({
         template: '<h1>404 NOT FOUND :(</h1>'
       });

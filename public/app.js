@@ -8,6 +8,10 @@ angular.module('app')
         templateUrl: './users/users.html',
         controller: 'usersController'
       })
+      .when('/messages/latest', {
+        templateUrl: './messages/messages.html',
+        controller: 'messagesController'
+      })
       .otherwise({
         template: '<h1>404 NOT FOUND :(</h1>'
       });

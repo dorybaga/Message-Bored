@@ -8,6 +8,9 @@ angular.module('app')
       .then(function(messages) {
         $scope.messages = messages;
       })
+      .catch((err) => {
+        console.log(err);
+      })
 
       $scope.postMsg = function(){
         let newPost = {

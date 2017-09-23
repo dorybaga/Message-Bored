@@ -8,4 +8,7 @@ angular.module('app')
       .then(function(users) {
         $scope.users = users;
       })
+      .catch((err => {
+        console.log(err);
+      }))
 }]);

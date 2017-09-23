@@ -6,7 +6,10 @@ angular.module('app')
         return $http.get('/api/users')
         .then(function(users) {
           return users.data;
-        });
+        })
+        .catch((err) => {
+          console.log(err);
+        })
       }
     };
 }]);

@@ -6,7 +6,10 @@ angular.module('app')
         return $http.get('/api/messages/latest')
         .then(function(messages) {
           return messages.data;
-        });
+        })
+        .catch((err) => {
+          console.log(err);
+        })
       },
       postMsg: function(msg) {
         return $http.post('/api/messages', msg);

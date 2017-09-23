@@ -22,7 +22,11 @@ angular.module('app')
 
         LoginService.addUser(newUser)
         .then((newUser) => {
+          console.log($scope.users);
           $scope.users = [...$scope.users, newUser.data]
         })
+        .catch((err => {
+          console.log(err);
+        }))
       }
 }]);

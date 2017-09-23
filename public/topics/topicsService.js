@@ -6,7 +6,10 @@ angular.module('app')
         return $http.get('/api/topics')
         .then(function(topics) {
           return topics.data;
-        });
+        })
+        .catch((err) => {
+          console.log(err);
+        })
       },
       addTopic: function(topic) { 
         return $http.post('/api/topics', topic); 

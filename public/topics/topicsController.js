@@ -8,6 +8,9 @@ angular.module('app')
       .then(function(topics) {
         $scope.topics = topics;
       })
+      .catch((err) => {
+        console.log(err);
+      })
 
         $scope.addTopic = function(){
           let newTopic = {
@@ -18,6 +21,9 @@ angular.module('app')
         TopicsService.addTopic(newTopic)
         .then((topic) => {
           $scope.topics = [...$scope.topics, topic.data]
+        })
+        .catch((err) => {
+          console.log(err);
         })
       }
     }]);

@@ -6,9 +6,14 @@ angular.module('app')
       userAuth: function(data){
         return $http.get('/api/users/login/' + data)
         .then(user => {
+          console.log('this is the user', user)
+          console.log('username id:', user.data.username)
           if(user !== null){
             localStorage.setItem('username', user.data.username)
           }
+        })
+        .catch((err) => {
+          console.log(err);
         })
       },
       addUser: function(newUser) { 

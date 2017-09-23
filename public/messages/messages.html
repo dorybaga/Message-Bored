@@ -2,7 +2,11 @@
   <h1>Latest Messages</h1>
   <div ng-repeat="message in messages | orderBy: '-createdAt'">
     <div>{{ message.body }}</div>
+    <br>
     <div>{{ message.createdAt}}</div>
-<!--     <div>{{ message.topic_id }}</div>
- -->  </div>
+    <div>{{ message.topic_id }}</div>
+    <div>{{ message.author_id }}</div>
+  </div>
+  <input type="text" ng-model="msgBody"> 
+  <button ng-click="postMsg()">Post</button>
 </div>

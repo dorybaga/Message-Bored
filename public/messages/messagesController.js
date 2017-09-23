@@ -12,11 +12,19 @@ angular.module('app')
         console.log(err);
       })
 
-      $scope.postMsg = function(){
-        let newPost = {
-          body: $scope.tempMsg.body
-          // author_id: 
-        };
-      
+        $scope.postMsg = function(){
+          let newPost = {
+            body: $scope.msgBody,
+            author_id: localStorage.getItem('username')
+          };
+
+        MessagesService.postMsg(newPost)
+        .then((message) => {
+          console.log("user#", newPost.author_id, "added a new message");
+          $scope.messages = [...$scope.messages, message.data]
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       }
     }]);

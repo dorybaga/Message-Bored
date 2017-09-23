@@ -5,9 +5,15 @@ angular.module('app')
     return {
       userAuth: function(data){
         return $http.get('/api/users/login/' + data)
+        // add error message if username already exists
+        // .then(user => {
+        //   if(user.data.username === -1) {
+        //     console.log('usename already exists.');
+        //   }
+        // })
         .then(user => {
-          console.log('this is the user', user)
-          console.log('username id:', user.data.username)
+          // console.log('this is the user', user)
+          // console.log('username id:', user.data.username)
           if(user !== null){
             localStorage.setItem('username', user.data.username)
           }

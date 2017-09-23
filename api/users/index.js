@@ -35,7 +35,6 @@ router.route('/users')
       }
     })
     .then((person) => {
-      console.log('PERSON', person);
       let user = {
         username: person.id
       };

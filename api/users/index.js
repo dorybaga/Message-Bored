@@ -27,15 +27,15 @@ router.route('/users')
     });
   });
 
-  router.route('/users/login/:id')
+  router.route('/users/login/:name')
   .get((req, res) => {
-    console.log('ROUTE FOR LOGIN WORKING');
     Users.findOne({
       where: {
-        id: req.params.name
+        name: req.params.name
       }
     })
     .then((person) => {
+      console.log('PERSON', person);
       let user = {
         username: person.id
       };

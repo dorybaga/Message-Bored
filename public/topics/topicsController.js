@@ -2,16 +2,17 @@
 angular.module('app')
   .controller('topicsController',
     ['$scope', 'TopicsService',
-    function($scope, TopicsServce){
+    function($scope, TopicsService){
       $scope.topics = [];
-      TopicsServce.getTopics()
+      TopicsService.getTopics()
       .then(function(topics) {
         $scope.topics = topics;
       })
 
       $scope.addTopic = function(){
         let newTopic = {
-          name: $scope.tempTopic.name
+          name: $scope.tempTopic.name,
+          created_by: localStorage.getItem('username')
         };
 
         TopicsService.addTopic(newTopic)

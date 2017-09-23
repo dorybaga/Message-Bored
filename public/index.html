@@ -6,16 +6,18 @@
   <base href="/">
 </head>
   <body ng-app="app">
-
-    <div>
+    <h1>Message Board</h1>
+    <div class="nav">
       <a ng-href="/home">Home</a>
       <a ng-href="/login">Login</a>
-      <a ng-href="/register">Register</a>
       <a ng-href="/users">Users</a>
+      <a ng-href="/topics">Topics</a>
     </div>
+    <br>
     <div>
       <a ng-href="/messages/latest">Latest</a>
     </div>
+    <br>
 
   <ng-view></ng-view>
 
@@ -23,6 +25,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
 
   <script src="app.js" type="text/javascript"></script>
+  <script src="./login/loginService.js" type="text/javascript"></script>
+  <script src="./login/loginController.js" type="text/javascript"></script>
   <script src="./users/usersService.js" type="text/javascript"></script>
   <script src="./users/usersController.js" type="text/javascript"></script>
   <script src="./messages/messagesService.js" type="text/javascript"></script>

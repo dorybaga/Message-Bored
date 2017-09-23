@@ -7,5 +7,5 @@ angular.module('app')
       UsersService.getUsers()
       .then(function(users) {
         $scope.users = users;
-      });
+      })
 }]);

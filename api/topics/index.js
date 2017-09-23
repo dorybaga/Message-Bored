@@ -17,7 +17,8 @@ router.route('/topics')
   })
   .post((req, res) => {
     Topics.create({
-      name: req.body.name
+      name: req.body.name,
+      created_by: req.body.created_by
     })
     .then((topic) => {
       res.json(topic);

@@ -9,6 +9,9 @@ angular.module('app')
           console.log('topics.data****', topics.data);
           return topics.data;
         });
+      },
+      addTopic: function(topic) { 
+        return $http.post('/api/topics', topic); 
       }
     };
   }]);

@@ -27,6 +27,25 @@ router.route('/users')
     });
   });
 
+  router.route('/users/login/:id')
+  .get((req, res) => {
+    console.log('ROUTE FOR LOGIN WORKING');
+    Users.findOne({
+      where: {
+        id: req.params.name
+      }
+    })
+    .then((person) => {
+      let user = {
+        username: person.id
+      };
+      res.json(user);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  });
+
 router.route('/users/:id')
   .get((req, res) => {
     Users.findById(parseInt(req.params.id))

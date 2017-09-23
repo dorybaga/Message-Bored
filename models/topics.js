@@ -14,8 +14,8 @@ module.exports = function(sequelize, DataTypes) {
   Topics.associate = function(models) {
     Topics.belongsTo(models.Users, {
       foreignKey: {
-        name: "created_by"
-        // allowNull: false
+        name: "created_by",
+        allowNull: false
       }
     });
     Topics.hasMany(models.Messages, {

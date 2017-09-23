@@ -10,7 +10,5 @@ angular.module('app')
           return users.data;
         });
       }
-      // getUser: function(index) { return users[index]; },
-      // addUser: function(user) { users.push(user); }
     };
 }]);

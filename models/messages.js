@@ -14,14 +14,14 @@ module.exports = function(sequelize, DataTypes) {
   Messages.associate = function(models) {
     Messages.belongsTo(models.Topics, {
       foreignKey: {
-        name: "topic_id"
-        // allowNull: false
+        name: "topic_id",
+        allowNull: false
       }
     });
     Messages.belongsTo(models.Users, {
       foreignKey: {
-        name: "author_id"
-        // allowNull: false
+        name: "author_id",
+        allowNull: false
       }
     });
   };

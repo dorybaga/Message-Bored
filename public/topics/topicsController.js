@@ -7,5 +7,16 @@ angular.module('app')
       TopicsServce.getTopics()
       .then(function(topics) {
         $scope.topics = topics;
-      });
+      })
+
+      $scope.addTopic = function(){
+        let newTopic = {
+          name: $scope.tempTopic.name
+        };
+
+        TopicsService.addTopic(newTopic)
+        .then((topic) => {
+          $scope.topics = [...$scope.topics, topic.data]
+        })
+      }
     }]);

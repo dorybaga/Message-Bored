@@ -9,11 +9,11 @@ angular.module('app')
         $scope.topics = topics;
       })
 
-      $scope.addTopic = function(){
-        let newTopic = {
-          name: $scope.tempTopic.name,
-          created_by: localStorage.getItem('username')
-        };
+        $scope.addTopic = function(){
+          let newTopic = {
+            name: $scope.tempTopic.name,
+            created_by: localStorage.getItem('username')
+          };
 
         TopicsService.addTopic(newTopic)
         .then((topic) => {

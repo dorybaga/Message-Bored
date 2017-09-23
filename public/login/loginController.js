@@ -4,15 +4,15 @@ angular.module('app')
   .controller('loginController',
     ['$scope', 'LoginService',
     function($scope, LoginService){
-      $scope.newUser = { 'name': ''};
+      $scope.user = { 'name': ''};
       $scope.LoginService = LoginService;
 
       $scope.userAuth = function(){
-        let username = $scope.newUser.name;
+        let username = $scope.user.name;
         LoginService.userAuth(username);
-        console.log('newusername', $scope.newUser.name)
+        console.log($scope.user.name, "is logged in")
         $scope.isLoggedIn = true;
-        $scope.newUser.name = '';
+        $scope.user.name = '';
       }
 
       $scope.addUser = function(){
@@ -21,8 +21,8 @@ angular.module('app')
         };
 
         LoginService.addUser(newUser)
-        .then((user) => {
-          $scope.users = [...$scope.users, user.data]
+        .then((newUser) => {
+          $scope.users = [...$scope.users, newUser.data]
         })
       }
 }]);

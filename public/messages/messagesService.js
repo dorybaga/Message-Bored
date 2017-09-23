@@ -5,10 +5,11 @@ angular.module('app')
       getMessages: function() {
         return $http.get('/api/messages/latest')
         .then(function(messages) {
-          console.log('messages************', messages);
-          console.log('messages.data*******', messages.data);
           return messages.data;
         });
+      },
+      postMsg: function(msg) {
+        return $http.post('/api/messages', msg);
       }
     };
   }]);

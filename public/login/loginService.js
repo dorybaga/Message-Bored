@@ -11,8 +11,8 @@ angular.module('app')
           }
         })
       },
-      addUser: function(user) { 
-        return $http.post('/api/users', user); 
+      addUser: function(newUser) { 
+        return $http.post('/api/users', newUser); 
       }
     };
 }]);

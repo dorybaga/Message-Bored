@@ -6,7 +6,8 @@ const Messages = db.Messages;
 
 router.post('/messages', (req, res) => {
   Messages.create({
-    body: req.body.body
+    body: req.body.body,
+    author_id: req.params.author_id
   })
   .then((message) => {
     res.json(message);

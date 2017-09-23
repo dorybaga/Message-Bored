@@ -5,8 +5,6 @@ angular.module('app')
       getUsers: function() {
         return $http.get('/api/users')
         .then(function(users) {
-          console.log('users***********', users);
-          console.log('users.data******', users.data)
           return users.data;
         });
       }

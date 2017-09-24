@@ -26,5 +26,14 @@ angular.module('app')
         .catch((err) => {
           console.log(err);
         })
+
+        // TopicsService.getTopicById()
+        // .then(function(topicId) {
+        //   $scope.topicId = topicId;
+        //   console.log("this is the topicId", topicId);
+        // })
+        // .catch((err) => {
+        //   console.log(err);
+        // })
       }
     }]);

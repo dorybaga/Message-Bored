@@ -15,7 +15,8 @@ angular.module('app')
         $scope.postMsg = function(){
           let newPost = {
             body: $scope.msgBody,
-            author_id: localStorage.getItem('username')
+            author_id: localStorage.getItem('username'),
+            topic_id: TopicsService.getTopicById()
           };
 
         MessagesService.postMsg(newPost)

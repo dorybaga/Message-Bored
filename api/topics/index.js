@@ -29,6 +29,20 @@ router.route('/topics')
   });
 
 router.route('/topics/:id')
+  .get((req, res) => {
+    Topics.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then((topic) => {
+      console.log('topic being returned from route is*******', topic)
+      res.json(topic)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  })
   .put((req, res) => {
     Topics.update({
       name: req.body.name

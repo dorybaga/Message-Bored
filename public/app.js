@@ -20,6 +20,10 @@ angular.module('app')
         templateUrl: './topics/topics.html',
         controller: 'topicsController'
       })
+      .when('/topics/:id', {
+        templateUrl: './topic/topic.html',
+        controller: 'topicController'
+      })
       .otherwise({
         template: '<h1>404 NOT FOUND :(</h1>'
       });

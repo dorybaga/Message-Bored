@@ -36,7 +36,6 @@ router.route('/topics/:id')
       }
     })
     .then((topic) => {
-      console.log('topic being returned from route is*******', topic)
       res.json(topic)
     })
     .catch((err) => {

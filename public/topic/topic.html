@@ -1,9 +1,12 @@
 <div>
         <h1>{{ topic.name }}</h1>
-        <!-- <input type="text" ng-model="topicName"> 
         <input type="text" ng-model="msgBody"> 
         <button ng-click="postMsg()">Post</button>
         <div ng-repeat="message in messages">
           <div>{{ message.body }}</div>
-        </div> -->
+          <br>
+          <div>Posted at: {{ message.createdAt}}</div>
+          <div>Topic Id: {{ message.topic_id }}</div>
+          <div>Author: {{ message.author_id }}</div>
+        </div>
 </div>

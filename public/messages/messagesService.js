@@ -10,9 +10,9 @@ angular.module('app')
         .catch((err) => {
           console.log(err);
         })
-      },
-      postMsg: function(msg) {
-        return $http.post('/api/messages', msg);
       }
+      // postMsg: function(msg) {
+      //   return $http.post('/api/messages', msg);
+      // }
     };
   }]);

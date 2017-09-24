@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     Messages.belongsTo(models.Topics, {
       foreignKey: {
         name: "topic_id",
-        allowNull: false
+        allowNull: true
       }
     });
     Messages.belongsTo(models.Users, {
